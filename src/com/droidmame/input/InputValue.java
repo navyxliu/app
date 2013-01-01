@@ -1,6 +1,4 @@
 /*
- * This file is part of MAME4droid.
- *
  * Copyright (C) 2011 David Valdeita (Seleuco)
  *
  * This program is free software; you can redistribute it and/or modify
@@ -31,54 +29,46 @@
 package com.droidmame.input;
 
 import com.droidmame.sf2.StreetFighter;
-
 import android.graphics.Rect;
 
-
 public class InputValue {
-	
-	private int type;
-	private int value;
-	
-	private int o_x1;
-	private int o_y1;
-	private int o_x2;
-	private int o_y2;
-	
-	private float dx = 1;
-	private float dy = 1;
-	private int ax = 0;
-	private int ay = 0;
-	
-	private int xoff_tmp = 0;
-	private int yoff_tmp = 0;
+    private int type;
+    private int value;
 
-	private int xoff = 0;
-	private int yoff = 0;
-	
-	private Rect rect = null;
-	
-	private Rect origRect = null;    
-	
-	private StreetFighter mm = null;
-	    
-    public InputValue(int d[], StreetFighter mm){
-       this.mm = mm;
-       //data = d;
-       type = d[0];
-       value = d[1];
+    private int o_x1;
+    private int o_y1;
+    private int o_x2;
+    private int o_y2;
+
+    private float dx = 1;
+    private float dy = 1;
+    private int ax = 0;
+    private int ay = 0;
+
+    private int xoff_tmp = 0;
+    private int yoff_tmp = 0;
+
+    private int xoff = 0;
+    private int yoff = 0;
+
+    private Rect rect = null;
+    private Rect origRect = null;    
+    private StreetFighter mm = null;
+        
+    public InputValue(int d[], StreetFighter mm) {
+        this.mm = mm;
+        //data = d;
+        type = d[0];
+        value = d[1];
        
-       if(type == InputHandler.TYPE_STICK_RECT && mm.getPrefsHelper().isTouchDZ())
-       {
-    	   if(value == InputHandler.STICK_LEFT)
-    	   {
-    		   d[4] -= d[4] * 0.18f;
-    	   }
-    	   if(value == InputHandler.STICK_RIGHT)
-    	   {		    	    		   
-    		   d[2] += d[4] * 0.18f;
-    		   d[4] -= (d[4] * 0.18f);
-    	   }		    	    	   		    	    		  
+        if (type == InputHandler.TYPE_STICK_RECT && mm.getPrefsHelper().isTouchDZ()) {
+            if (value == InputHandler.STICK_LEFT) {
+               d[4] -= d[4] * 0.18f;
+            }
+            if (value == InputHandler.STICK_RIGHT) {
+               d[2] += d[4] * 0.18f;
+               d[4] -= (d[4] * 0.18f);
+            }
        }
        
        o_x1 = d[2];
@@ -87,22 +77,20 @@ public class InputValue {
        o_y2 = o_y1 + d[5];       
     }
   
-    public void setFixData(float dx, float dy, int ax, int ay)
-    {
-    	this.dx = dx;
-    	this.dy = dy;
-    	this.ax = ax;
-    	this.ay = ay;
-    	rect = null;
+    public void setFixData(float dx, float dy, int ax, int ay) {
+        this.dx = dx;
+        this.dy = dy;
+        this.ax = ax;
+        this.ay = ay;
+        rect = null;
     }
     
-    public void setOffset(int xoff,int yoff)
-    {
-    	this.xoff = xoff;
-    	this.yoff = yoff;
-    	xoff_tmp = 0;
-    	yoff_tmp = 0;
-    	rect = null;
+    public void setOffset(int xoff,int yoff) {
+        this.xoff = xoff;
+        this.yoff = yoff;
+        xoff_tmp = 0;
+        yoff_tmp = 0;
+        rect = null;
     }
     
     public void setOffsetTMP(int xoff_tmp,int yoff_tmp)

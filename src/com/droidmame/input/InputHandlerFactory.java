@@ -1,6 +1,4 @@
 /*
- * This file is part of MAME4droid.
- *
  * Copyright (C) 2011 David Valdeita (Seleuco)
  *
  * This program is free software; you can redistribute it and/or modify
@@ -33,19 +31,18 @@ package com.droidmame.input;
 import java.lang.reflect.Method;
 
 import android.view.MotionEvent;
-
+import android.util.Log;
 import com.droidmame.sf2.StreetFighter;
 
 public class InputHandlerFactory {
-	
-	static public InputHandler createInputHandler(StreetFighter mm){		
-	    try {
-		      @SuppressWarnings("unused")
-			  Method m = MotionEvent.class.getMethod("getPointerCount");		     
-		      return new InputHandlerExt(mm);//MultiTouch  
-		      //return new InputHandler(mm);//FAKED para pruebas
-		} catch (NoSuchMethodException e) {
-			return new InputHandler(mm);
-		}		
-	}	
+    static public InputHandler createInputHandler(StreetFighter mm) {
+        try {
+            @SuppressWarnings("unused")
+            Method m = MotionEvent.class.getMethod("getPointerCount");
+            Log.d(StreetFighter.TAG, "support multitouch."); 
+            return new InputHandlerExt(mm);//MultiTouch  
+        } catch (NoSuchMethodException e) {
+            return new InputHandler(mm);
+        }
+    }
 }

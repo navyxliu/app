@@ -55,11 +55,12 @@ import com.droidmame.views.FilterView;
 import com.droidmame.views.IEmuView;
 import com.droidmame.views.InputView;
 import com.droidmame.sf2.R;
+import com.droidmame.sf2.BuildConfig;
 import com.umeng.analytics.MobclickAgent;
 
 public class StreetFighter extends Activity {
     public static String TAG = "emul";
-
+    public static boolean isDebug = BuildConfig.DEBUG;
     protected View emuView              = null;
     protected InputView inputView       = null;
     protected FilterView filterView     = null;
@@ -123,7 +124,6 @@ public class StreetFighter extends Activity {
                 
         //inputHandler = new InputHandler(this);
         inputHandler = InputHandlerFactory.createInputHandler(this);
-                
         FrameLayout fl = (FrameLayout)this.findViewById(R.id.EmulatorFrame);
 
         if (prefsHelper.getVideoRenderMode() == PrefsHelper.PREF_RENDER_GL) {
@@ -266,7 +266,9 @@ public class StreetFighter extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        MobclickAgent.onResume(this);
+        if (!isDebug) {
+            MobclickAgent.onResume(this);
+        }
         
         if (prefsHelper != null)
             prefsHelper.resume();
@@ -284,8 +286,9 @@ public class StreetFighter extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onPause(this);
-        
+        if (!isDebug) {
+            MobclickAgent.onPause(this);
+        } 
         if (prefsHelper != null)
            prefsHelper.pause();
 

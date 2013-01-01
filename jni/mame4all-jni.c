@@ -339,13 +339,10 @@ JNIEXPORT void JNICALL Java_com_droidmame_sf2_Emulator_init
 JNIEXPORT void JNICALL Java_com_droidmame_sf2_Emulator_setPadData
   (JNIEnv *env, jclass c, jint i,  jlong jl)
 {
-    //long 	jlong 	signed 64 bits ??? valdria con un jint
-    //__android_log_print(ANDROID_LOG_INFO, "mame4all-jni", "setPadData");
+    __android_log_print(ANDROID_LOG_INFO, "mame4all-jni", "setPadData %x", (unsigned long)jl);
 
-    unsigned long l = (unsigned long)jl;
-
-    if(setPadStatus!=NULL)
-       setPadStatus(i,l);
+    if (setPadStatus != NULL)
+       setPadStatus(i, (unsigned long)jl);
 }
 
 JNIEXPORT void JNICALL Java_com_droidmame_sf2_Emulator_setAnalogData

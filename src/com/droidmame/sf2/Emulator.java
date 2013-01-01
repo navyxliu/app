@@ -315,7 +315,7 @@ public class Emulator
     static public void changeVideo(int newWidth, int newHeight) {
         synchronized(lock1) {
             for (int i=0;i<4;i++)
-                Emulator.setPadData(i,0);
+                Emulator.setPadData(i, 0);
             
             emu_width = newWidth;
             emu_height = newHeight;
