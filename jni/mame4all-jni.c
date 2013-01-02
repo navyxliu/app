@@ -41,8 +41,12 @@
 
 #define DEBUG 1
 
+//predefine 
+#define DROID_EMUL "mame"
+#define DROID_GAME "sf2"
+
 //mame4all funtions
-int  (*android_main)(int argc, char **argv)=NULL;
+int  (*android_main_entry)(char *mame, char *game);
 void (*setAudioCallbacks)(void *func1,void *func2,void *func3)= NULL;
 void (*setVideoCallbacks)(void *func1,void *func2,void *func3) = NULL;
 void (*setPadStatus)(int i, unsigned long pad_status) = NULL;
@@ -96,7 +100,7 @@ static void load_lib(const char *str)
         return;
     }
 
-    android_main = dlsym(libdl, "android_main");
+    android_main_entry = dlsym(libdl, "android_main_select");
     setVideoCallbacks = dlsym(libdl, "setVideoCallbacks");
     setAudioCallbacks = dlsym(libdl, "setAudioCallbacks");    
     setPadStatus = dlsym(libdl, "setPadStatus");    
@@ -291,7 +295,7 @@ int JNI_OnLoad(JavaVM* vm, void* reserved)
 
 void* app_Thread_Start(void* args)
 {
-    android_main(0, NULL); 
+    android_main_entry(DROID_EMUL, DROID_GAME); 
     return NULL;
 }
 
@@ -333,14 +337,12 @@ JNIEXPORT void JNICALL Java_com_droidmame_sf2_Emulator_init
     }
     */
     
-    android_main(0, NULL);    
+    android_main_entry(DROID_EMUL, DROID_GAME);    
 }
 
 JNIEXPORT void JNICALL Java_com_droidmame_sf2_Emulator_setPadData
   (JNIEnv *env, jclass c, jint i,  jlong jl)
 {
-    __android_log_print(ANDROID_LOG_INFO, "mame4all-jni", "setPadData %x", (unsigned long)jl);
-
     if (setPadStatus != NULL)
        setPadStatus(i, (unsigned long)jl);
 }
