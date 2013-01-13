@@ -36,6 +36,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.Paint.Style;
+import android.content.res.Configuration;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioTrack;
@@ -433,8 +434,17 @@ public class Emulator
 
     public static void doScreenshot() {
         if (screenshot) {
-            Bitmap screen_bmp = Bitmap.createScaledBitmap(emuBitmap, getWindow_width(), getWindow_height(), false);
+            //Bitmap screen_bmp = Bitmap.createScaledBitmap(emuBitmap, getWindow_width(), getWindow_height(), false);
 
+            //per google play, we get 480*800
+            Bitmap screen_bmp; 
+            if (mm.getMainHelper().getscrOrientation() 
+                    == Configuration.ORIENTATION_LANDSCAPE) {
+                screen_bmp = Bitmap.createScaledBitmap(emuBitmap, 800, 480, false);
+            }
+            else {
+                screen_bmp = Bitmap.createScaledBitmap(emuBitmap, 480, 800, false);
+            }
             try {
                 String newname= String.format("screenshot-%04d.jpg", screenshot_num++);
                 File fn = new File(mm.getPrefsHelper().getROMsDIR() + File.separator + newname);
