@@ -49,12 +49,12 @@ import com.droidmame.input.InputHandler;
 import com.droidmame.input.InputValue;
 import com.droidmame.input.TiltSensor;
 import com.droidmame.sf2.Emulator;
-import com.droidmame.sf2.StreetFighter;
-import com.droidmame.sf2.R;
+import com.droidmame.sf2.StreetFighterA;
+import com.droidmame.sf2pkg2.R;
 
 public class InputView extends ImageView {
 		
-	protected StreetFighter mm = null;
+	protected StreetFighterA mm = null;
 	protected Bitmap bmp = null;
 	protected Paint pnt = new Paint();
 	protected Rect rsrc = new Rect();
@@ -67,7 +67,7 @@ public class InputView extends ImageView {
 	static BitmapDrawable stick_images[] = null;
 	static BitmapDrawable btns_images[][] = null;
 		  		 
-	public void setMAME4all(StreetFighter mm) {
+	public void setMAME4all(StreetFighterA mm) {
 		this.mm = mm;
 		
 		if(stick_images==null)

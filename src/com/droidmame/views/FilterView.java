@@ -37,14 +37,14 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.droidmame.helpers.PrefsHelper;
-import com.droidmame.sf2.StreetFighter;
+import com.droidmame.sf2.StreetFighterA;
 
 
 public class FilterView extends View implements IEmuView{
 	
 	protected int scaleType = PrefsHelper.PREF_ORIGINAL;
 		
-	protected StreetFighter mm = null;
+	protected StreetFighterA mm = null;
 	
 	public int getScaleType() {
 		return scaleType;
@@ -54,7 +54,7 @@ public class FilterView extends View implements IEmuView{
 		this.scaleType = scaleType;
 	}
 
-	public void setMAME4all(StreetFighter mm) {
+	public void setMAME4all(StreetFighterA mm) {
 		this.mm = mm;
 	}
 	

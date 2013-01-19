@@ -44,7 +44,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.droidmame.input.InputHandler;
-import com.droidmame.sf2.R;
+import com.droidmame.sf2pkg2.R;
 
 public class ListKeys extends ListActivity {
 		

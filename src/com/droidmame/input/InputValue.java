@@ -28,7 +28,7 @@
 
 package com.droidmame.input;
 
-import com.droidmame.sf2.StreetFighter;
+import com.droidmame.sf2.StreetFighterA;
 import android.graphics.Rect;
 
 public class InputValue {
@@ -53,9 +53,9 @@ public class InputValue {
 
     private Rect rect = null;
     private Rect origRect = null;    
-    private StreetFighter mm = null;
+    private StreetFighterA mm = null;
         
-    public InputValue(int d[], StreetFighter mm) {
+    public InputValue(int d[], StreetFighterA mm) {
         this.mm = mm;
         //data = d;
         type = d[0];

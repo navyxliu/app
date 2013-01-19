@@ -46,7 +46,7 @@ import android.preference.PreferenceScreen;
 import com.droidmame.helpers.PrefsHelper;
 import com.droidmame.input.ControlCustomizer;
 import com.droidmame.input.InputHandler;
-import com.droidmame.sf2.R;
+import com.droidmame.sf2pkg2.R;
 
 public class UserPreferences extends PreferenceActivity implements OnSharedPreferenceChangeListener {
 	

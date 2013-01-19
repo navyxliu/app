@@ -35,7 +35,7 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
 import com.droidmame.input.InputHandler;
-import com.droidmame.sf2.StreetFighter;
+import com.droidmame.sf2.StreetFighterA;
 
 public class PrefsHelper implements OnSharedPreferenceChangeListener
 {
@@ -103,9 +103,9 @@ public class PrefsHelper implements OnSharedPreferenceChangeListener
 	final public static int PREF_CRT_1 = 4;	
 	final public static int PREF_CRT_2 = 5;
 	
-    protected StreetFighter mm = null;
+    protected StreetFighterA mm = null;
     
-    public PrefsHelper(StreetFighter value) {
+    public PrefsHelper(StreetFighterA value) {
             mm = value;
     }
 

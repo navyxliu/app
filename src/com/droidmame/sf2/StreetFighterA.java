@@ -54,11 +54,11 @@ import com.droidmame.input.InputHandlerFactory;
 import com.droidmame.views.FilterView;
 import com.droidmame.views.IEmuView;
 import com.droidmame.views.InputView;
-import com.droidmame.sf2.R;
-import com.droidmame.sf2.BuildConfig;
+import com.droidmame.sf2pkg2.R;
+import com.droidmame.sf2pkg2.BuildConfig;
 import com.umeng.analytics.MobclickAgent;
 
-public class StreetFighter extends Activity {
+public class StreetFighterA extends Activity {
     public static String TAG = "emul";
     public static boolean isDebug = BuildConfig.DEBUG;
     protected View emuView              = null;

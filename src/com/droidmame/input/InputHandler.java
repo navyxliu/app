@@ -50,7 +50,7 @@ import android.view.View.OnTouchListener;
 import com.droidmame.helpers.DialogHelper;
 import com.droidmame.helpers.PrefsHelper;
 import com.droidmame.sf2.Emulator;
-import com.droidmame.sf2.StreetFighter;
+import com.droidmame.sf2.StreetFighterA;
 
 public class InputHandler implements OnTouchListener, OnKeyListener, IController{
     static String TAG = "emul.input";
@@ -207,7 +207,7 @@ A = A
 
     protected int old_btnStates[] = new int[NUM_BUTTONS];
 
-    protected StreetFighter mm = null;
+    protected StreetFighterA mm = null;
     protected Handler handler = new Handler();
     protected Object lock = new Object();
 
@@ -222,7 +222,7 @@ A = A
         }
     };
 
-    public InputHandler(StreetFighter value) {
+    public InputHandler(StreetFighterA value) {
         mm = value;
 
         if (mm.getMainHelper().getscrOrientation() 

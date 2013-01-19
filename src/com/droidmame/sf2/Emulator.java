@@ -63,7 +63,7 @@ public class Emulator
     final static public int EXIT_PAUSE       = 9;
     final static public int IDLE_WAIT        = 10;
 
-    private static StreetFighter mm = null;
+    private static StreetFighterA mm = null;
     
     private static boolean isEmulating = false;
     public static boolean isEmulating() { return isEmulating; }
@@ -237,7 +237,7 @@ public class Emulator
         }
     }
     
-    public static void setMAME4all(StreetFighter mm) {
+    public static void setMAME4all(StreetFighterA mm) {
         Emulator.mm = mm;
         videoT.setMAME4all(mm);
     }
@@ -452,7 +452,7 @@ public class Emulator
                 screen_bmp.compress(Bitmap.CompressFormat.JPEG, 80, fos);
 
                 if (mm != null)  {
-                    Log.v(StreetFighter.TAG, "saved " + newname);
+                    Log.v(StreetFighterA.TAG, "saved " + newname);
                     //doesn't work, why? 
                     //mm.toastMsg("saved " +  newname);
                 }

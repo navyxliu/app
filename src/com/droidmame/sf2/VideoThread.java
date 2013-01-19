@@ -42,13 +42,13 @@ public class VideoThread implements Runnable {
     protected Thread thread = null;
     protected Canvas canvas = null;
     protected boolean run   = false;
-    protected StreetFighter mm   = null;
+    protected StreetFighterA mm   = null;
 
     protected int i    = 0;
     protected int fps  = 0;
     protected long millis = 0;
    
-    public void setMAME4all(StreetFighter mm) {
+    public void setMAME4all(StreetFighterA mm) {
         this.mm = mm;		
     }
 

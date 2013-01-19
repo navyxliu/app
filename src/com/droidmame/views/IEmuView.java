@@ -30,10 +30,10 @@
 
 package com.droidmame.views;
 
-import com.droidmame.sf2.StreetFighter;
+import com.droidmame.sf2.StreetFighterA;
 
 public interface IEmuView {
-    public void setMAME4all(StreetFighter mm);
+    public void setMAME4all(StreetFighterA mm);
     public void setScaleType(int scaleType);
     public int getScaleType();
 }

@@ -36,14 +36,14 @@ import android.view.MenuItem;
 
 import com.droidmame.input.InputHandler;
 import com.droidmame.sf2.Emulator;
-import com.droidmame.sf2.StreetFighter;
-import com.droidmame.sf2.R;
+import com.droidmame.sf2.StreetFighterA;
+import com.droidmame.sf2pkg2.R;
 
 public class MenuHelper {
 	
-	protected StreetFighter mm = null;
+	protected StreetFighterA mm = null;
 	
-	public MenuHelper(StreetFighter value){
+	public MenuHelper(StreetFighterA value){
 		mm = value;
 	}
 	

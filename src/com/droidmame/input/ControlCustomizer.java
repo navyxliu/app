@@ -39,7 +39,7 @@ import android.graphics.Paint.Style;
 import android.view.MotionEvent;
 
 import com.droidmame.helpers.PrefsHelper;
-import com.droidmame.sf2.StreetFighter;
+import com.droidmame.sf2.StreetFighterA;
 
 public class ControlCustomizer {
     private static boolean enabled = false;
@@ -60,9 +60,9 @@ public class ControlCustomizer {
     private int prev_ax=0;
     private int prev_ay=0;
 
-    protected StreetFighter mm = null;
+    protected StreetFighterA mm = null;
 
-    public void setMAME4all(StreetFighter value) {
+    public void setMAME4all(StreetFighterA value) {
         mm = value;
     }
 

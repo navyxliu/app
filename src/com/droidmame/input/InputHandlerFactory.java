@@ -32,14 +32,14 @@ import java.lang.reflect.Method;
 
 import android.view.MotionEvent;
 import android.util.Log;
-import com.droidmame.sf2.StreetFighter;
+import com.droidmame.sf2.StreetFighterA;
 
 public class InputHandlerFactory {
-    static public InputHandler createInputHandler(StreetFighter mm) {
+    static public InputHandler createInputHandler(StreetFighterA mm) {
         try {
             @SuppressWarnings("unused")
             Method m = MotionEvent.class.getMethod("getPointerCount");
-            Log.d(StreetFighter.TAG, "support multitouch."); 
+            Log.d(StreetFighterA.TAG, "support multitouch."); 
             return new InputHandlerExt(mm);//MultiTouch  
         } catch (NoSuchMethodException e) {
             return new InputHandler(mm);

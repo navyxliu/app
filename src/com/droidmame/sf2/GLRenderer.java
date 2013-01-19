@@ -60,8 +60,8 @@ public class GLRenderer implements Renderer {
     protected boolean force10     = false;
     protected boolean smooth      = false;
 
-    protected StreetFighter mm = null;
-    public void setMAME4all(StreetFighter mm) { this.mm = mm; }
+    protected StreetFighterA mm = null;
+    public void setMAME4all(StreetFighterA mm) { this.mm = mm; }
 
     //for fps comp   
     protected int i       = 0;

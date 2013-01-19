@@ -38,7 +38,7 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.droidmame.sf2.R;
+import com.droidmame.sf2pkg2.R;
 
 public class SensitivityPrefScreen extends DialogPreference implements
 		SeekBar.OnSeekBarChangeListener {

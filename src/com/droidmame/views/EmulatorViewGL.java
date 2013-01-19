@@ -40,12 +40,12 @@ import android.view.MotionEvent;
 import com.droidmame.helpers.PrefsHelper;
 import com.droidmame.sf2.Emulator;
 import com.droidmame.sf2.GLRenderer;
-import com.droidmame.sf2.StreetFighter;
+import com.droidmame.sf2.StreetFighterA;
 
 
 public class EmulatorViewGL extends GLSurfaceView implements IEmuView {
     protected int scaleType = PrefsHelper.PREF_ORIGINAL;
-    protected StreetFighter mm = null;
+    protected StreetFighterA mm = null;
     protected GLRenderer render = null;
 
     public Renderer getRender() {
@@ -60,7 +60,7 @@ public class EmulatorViewGL extends GLSurfaceView implements IEmuView {
         this.scaleType = scaleType;
     }
 
-    public void setMAME4all(StreetFighter mm) {
+    public void setMAME4all(StreetFighterA mm) {
         this.mm = mm;
         render.setMAME4all(mm);
     }

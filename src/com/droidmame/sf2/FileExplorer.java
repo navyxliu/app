@@ -45,7 +45,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.droidmame.helpers.DialogHelper;
-import com.droidmame.sf2.R;
+import com.droidmame.sf2pkg2.R;
 
 public class FileExplorer {
 
@@ -68,9 +68,9 @@ public class FileExplorer {
 
 	ListAdapter adapter;
 
-	protected StreetFighter mm = null;
+	protected StreetFighterA mm = null;
 
-	public FileExplorer(StreetFighter mm) {
+	public FileExplorer(StreetFighterA mm) {
 		this.mm = mm;
 	}
 

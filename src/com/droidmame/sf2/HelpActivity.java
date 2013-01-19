@@ -33,7 +33,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import com.droidmame.sf2.R;
+import com.droidmame.sf2pkg2.R;
 
 import android.app.Activity;
 import android.content.res.Resources.NotFoundException;

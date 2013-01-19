@@ -35,7 +35,7 @@ import android.view.View;
 
 import com.droidmame.input.ControlCustomizer;
 import com.droidmame.sf2.Emulator;
-import com.droidmame.sf2.StreetFighter;
+import com.droidmame.sf2.StreetFighterA;
 
 public class DialogHelper {
     public static int savedDialog = DialogHelper.DIALOG_NONE;
@@ -52,7 +52,7 @@ public class DialogHelper {
     public final static int DIALOG_LOAD_FILE_EXPLORER   = 9;
     public final static int DIALOG_FINISH_CUSTOM_LAYOUT = 10;
     
-    protected StreetFighter mm = null;
+    protected StreetFighterA mm = null;
     
     static protected String errorMsg;
     static protected String infoMsg;
@@ -65,7 +65,7 @@ public class DialogHelper {
             DialogHelper.infoMsg = infoMsg;
     }
             
-    public DialogHelper(StreetFighter value) {
+    public DialogHelper(StreetFighterA value) {
             mm = value;
     }
     

@@ -44,16 +44,16 @@ import android.hardware.SensorManager;
 import android.view.Surface;
 
 import com.droidmame.sf2.Emulator;
-import com.droidmame.sf2.StreetFighter;
+import com.droidmame.sf2.StreetFighterA;
 
 public class TiltSensor {
 	
 	
     DecimalFormat df = new DecimalFormat("000.00");
 	
-	protected StreetFighter mm = null;
+	protected StreetFighterA mm = null;
 	
-	public void setMAME4all(StreetFighter value) {
+	public void setMAME4all(StreetFighterA value) {
 		mm = value;
 	}
 	

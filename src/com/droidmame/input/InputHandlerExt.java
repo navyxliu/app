@@ -35,7 +35,7 @@ import android.view.MotionEvent;
 import com.droidmame.helpers.DialogHelper;
 import com.droidmame.helpers.PrefsHelper;
 import com.droidmame.sf2.Emulator;
-import com.droidmame.sf2.StreetFighter;
+import com.droidmame.sf2.StreetFighterA;
 
 public class InputHandlerExt extends InputHandler {
     protected int [] touchContrData = new int[20];
@@ -45,7 +45,7 @@ public class InputHandlerExt extends InputHandler {
     protected static int [] oldtouches = new int[20];
     protected static boolean [] touchstates = new boolean[20];
     
-    public InputHandlerExt(StreetFighter value) {
+    public InputHandlerExt(StreetFighterA value) {
         super(value);
     }
     

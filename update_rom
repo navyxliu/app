@@ -1,0 +1,14 @@
+#/bin/bash
+pushd 
+cd res/raw
+mkdir -p roms
+cd roms
+cp ../roms.zip .
+unzip roms.zip
+rm roms.zip
+rm roms/*.zip
+cp $1 roms/
+zip -r roms.zip .
+cp roms.zip ../
+cd ..
+rm -fr roms/

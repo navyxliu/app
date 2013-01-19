@@ -40,8 +40,8 @@ import android.view.MotionEvent;
 
 import com.droidmame.helpers.PrefsHelper;
 import com.droidmame.sf2.Emulator;
-import com.droidmame.sf2.StreetFighter;
-import com.droidmame.sf2.R;
+import com.droidmame.sf2.StreetFighterA;
+import com.droidmame.sf2pkg2.R;
 
 public class AnalogStick implements IController{
 	
@@ -73,13 +73,13 @@ public class AnalogStick implements IController{
 	static BitmapDrawable outer_img = null;
 	static BitmapDrawable stick_images[] = null;
 		
-	protected StreetFighter mm = null;
+	protected StreetFighterA mm = null;
 	
 	final public float rad2degree(float r){
 	   return ((r * 180.0f) / MY_PI);
 	}
 	
-	public void setMAME4all(StreetFighter value) {
+	public void setMAME4all(StreetFighterA value) {
 		mm = value;
 		
 		if(inner_img==null)inner_img=(BitmapDrawable)mm.getResources().getDrawable(R.drawable.stick_inner);

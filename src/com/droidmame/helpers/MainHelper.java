@@ -55,11 +55,11 @@ import com.droidmame.input.InputHandler;
 import com.droidmame.prefs.UserPreferences;
 import com.droidmame.sf2.Emulator;
 import com.droidmame.sf2.HelpActivity;
-import com.droidmame.sf2.StreetFighter;
+import com.droidmame.sf2.StreetFighterA;
 import com.droidmame.views.FilterView;
 import com.droidmame.views.IEmuView;
 import com.droidmame.views.InputView;
-import com.droidmame.sf2.R;
+import com.droidmame.sf2pkg2.R;
 
 public class MainHelper {
     final static public int SUBACTIVITY_USER_PREFS = 1;
@@ -68,9 +68,9 @@ public class MainHelper {
 
     final static public String MAGIC_FILE = "dont-delete-00001.bin";
 
-    protected StreetFighter mm = null;
+    protected StreetFighterA mm = null;
 
-    public MainHelper(StreetFighter value) { mm = value; }
+    public MainHelper(StreetFighterA value) { mm = value; }
 
     public String getLibDir() {
         String cache_dir, lib_dir;
