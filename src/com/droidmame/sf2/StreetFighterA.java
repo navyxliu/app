@@ -267,6 +267,7 @@ public class StreetFighterA extends Activity {
     protected void onResume() {
         super.onResume();
         if (!isDebug) {
+            Log.d(TAG, "umeng is called");
             MobclickAgent.onResume(this);
         }
         
