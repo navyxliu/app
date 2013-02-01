@@ -1,6 +1,4 @@
 /*
- * This file is part of MAME4droid.
- *
  * Copyright (C) 2011 David Valdeita (Seleuco)
  *
  * This program is free software; you can redistribute it and/or modify
@@ -37,9 +35,9 @@
 
 #include <pthread.h>
 
-#include "com_seleuco_mame4all_Emulator.h"
+#include "com_droidmame_sf2_Emulator.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 //predefine 
 #define DROID_EMUL "mame"
@@ -65,7 +63,6 @@ jmethodID android_dumpAudio;
 jmethodID android_closeAudio;
 
 static JavaVM *jVM = NULL;
-static void *libdl = NULL;
 static jclass cEmulator = NULL;
 
 static jobject videoBuffer=NULL;//es un ByteBuffer wrappeando el buffer de video en la libreria 
@@ -78,26 +75,20 @@ static unsigned char audioByteBuffer[882 * 2 * 2 * 10];
 static pthread_t main_tid;
 
 
-static void load_lib(const char *str)
+static int load_lib(const char *str)
 {
-
     char str2[256];
-    
+    static void * libdl = NULL;
+
+    if (libdl) return 0;
+
     strcpy(str2,str);
     strcpy(str2+strlen(str),"/libMAME4all.so");
 
-#ifdef DEBUG
-    __android_log_print(ANDROID_LOG_DEBUG, "mame4all-jni", "Attempting to load %s\n", str2);
-#endif
-
-    if(libdl!=NULL)
-        return;
-
     libdl = dlopen(str2, RTLD_NOW);
-    if(!libdl)
-    {
+    if (!libdl) {
         __android_log_print(ANDROID_LOG_ERROR, "mame4all-jni", "Unable to load libMAME4all.so: %s\n", dlerror());
-        return;
+        return -1;
     }
 
     android_main_entry = dlsym(libdl, "android_main_select");
@@ -110,6 +101,8 @@ static void load_lib(const char *str)
     getMyValue = dlsym(libdl, "getMyValue"); 
 
     setMyAnalogData = dlsym(libdl, "setMyAnalogData"); 
+
+    return 0;
 }
 
 void myJNI_initVideo(void *buffer)
@@ -128,8 +121,7 @@ void myJNI_initVideo(void *buffer)
 
 void myJNI_dumpVideo(int emulating)
 {
-
-JNIEnv *env;
+    JNIEnv *env;
     (*jVM)->GetEnv(jVM, (void**) &env, JNI_VERSION_1_4);
 
 #ifdef DEBUG
@@ -299,14 +291,14 @@ void* app_Thread_Start(void* args)
     return NULL;
 }
 
-JNIEXPORT void JNICALL Java_com_droidmame_sf2_Emulator_init
+JNIEXPORT jboolean JNICALL Java_com_droidmame_sf2_Emulator_init
   (JNIEnv *env, jclass c,  jstring s1, jstring s2)
 {
     __android_log_print(ANDROID_LOG_INFO, "mame4all-jni", "init");
 
     const char *str1 = (*env)->GetStringUTFChars(env, s1, 0);
 
-    load_lib(str1);
+    if (load_lib(str1)) return JNI_FALSE;
 
     (*env)->ReleaseStringUTFChars(env, s1, str1);
     
@@ -338,6 +330,8 @@ JNIEXPORT void JNICALL Java_com_droidmame_sf2_Emulator_init
     */
     
     android_main_entry(DROID_EMUL, DROID_GAME);    
+    //not reachable
+    return JNI_TRUE;
 }
 
 JNIEXPORT void JNICALL Java_com_droidmame_sf2_Emulator_setPadData
@@ -376,6 +370,15 @@ JNIEXPORT void JNICALL Java_com_droidmame_sf2_Emulator_setValue
       setMyValue(key,value);
 }
 
+JNIEXPORT void JNICALL Java_com_droidmame_sf2_Emulator_saveState
+  (JNIEnv *env, jclass c)
+{
+    if (setMyValue != NULL)
+        setMyValue(40, 0/*unuse*/);
+}
 
-
-
+JNIEXPORT void JNICALL Java_com_droidmame_sf2_Emulator_restoreState
+  (JNIEnv *env, jclass c)
+{
+    setMyValue(50, 0/*unuse*/);
+}

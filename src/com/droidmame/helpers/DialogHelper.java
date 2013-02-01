@@ -200,7 +200,7 @@ public class DialogHelper {
 	    	dialog = builder.create();
 	        break;
 	    case DIALOG_OPTIONS:	    	
-	    	final CharSequence[] items = {"Help","Settings", "Support", "Cancel"};
+	    	final CharSequence[] items = {"Help","Settings", "Save", "Load", "Cancel"};
 	    	builder.setTitle("Choose an option from the menu. Press cancel to go back");
 	    	builder.setCancelable(true);
 	    	builder.setItems(items, new DialogInterface.OnClickListener() {
@@ -208,8 +208,10 @@ public class DialogHelper {
 	    	        switch (item){
 	    	          case 0: mm.getMainHelper().showHelp();break;
 	    	          case 1: mm.getMainHelper().showSettings();break;
-	    	          case 2: mm.showDialog(DialogHelper.DIALOG_THANKS);break;
-	    	          case 3: 
+	    	          case 2: Emulator.saveState();
+                          case 3: Emulator.restoreState();
+                          //fallthrough
+	    	          case 4: 
 	    	        	  Emulator.resume();
 	    	        	  break;
 	    	        }

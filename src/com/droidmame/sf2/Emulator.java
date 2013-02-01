@@ -465,7 +465,7 @@ public class Emulator
          }
     }    
     //native
-    protected static native void init(String libPath,String resPath);
+    public static native boolean init(String libPath,String resPath);
                     
     synchronized public static native void setPadData(int i, long data);
     
@@ -474,5 +474,6 @@ public class Emulator
     public static native int getValue(int key);
     
     public static native void setValue(int key, int value);
-            
+    public static native void saveState();
+    public static native void restoreState();
 }
