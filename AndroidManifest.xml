@@ -17,8 +17,8 @@
 		<activity android:name="com.droidmame.prefs.ListKeys" android:theme="@style/Theme.MAME4ALL.TitleBar" android:label="MAME4droid Player Keys"/>
 		<activity android:name="com.droidmame.prefs.KeySelect" android:label="Select Key" android:theme="@android:style/Theme.Dialog"/>
 		
-		<meta-data android:value="50d8844652701521dc0002d7" android:name="UMENG_APPKEY"></meta-data>
-        <meta-data android:value="play-google" android:name="UMENG_CHANNEL"/>
+		<meta-data android:value="510e77e05270150193000048" android:name="UMENG_APPKEY"></meta-data>
+        <meta-data android:value="gfan" android:name="UMENG_CHANNEL"/>
 	</application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
