@@ -45,7 +45,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.droidmame.helpers.DialogHelper;
-import com.droidmame.sf2pkg2.R;
+import com.dreamgame.dino.R;
 
 public class FileExplorer {
 

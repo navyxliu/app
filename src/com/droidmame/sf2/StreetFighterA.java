@@ -54,8 +54,8 @@ import com.droidmame.input.InputHandlerFactory;
 import com.droidmame.views.FilterView;
 import com.droidmame.views.IEmuView;
 import com.droidmame.views.InputView;
-import com.droidmame.sf2pkg2.R;
-import com.droidmame.sf2pkg2.BuildConfig;
+import com.dreamgame.dino.R;
+import com.dreamgame.dino.BuildConfig;
 import com.umeng.analytics.MobclickAgent;
 
 public class StreetFighterA extends Activity {

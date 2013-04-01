@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.droidmame.sf2pkg2"
+      package="com.dreamgame.dino"
       android:installLocation="preferExternal" android:versionName="0.3.2" android:versionCode="12">
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:allowClearUserData="true" android:hardwareAccelerated="true" android:debuggable="false">
         <activity android:name="com.droidmame.sf2.StreetFighterA" android:label="@string/app_name"
                   android:launchMode="singleTask" 
-                  android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Theme.MAME4ALL">
+                  android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Theme.MAME4ALL" android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -17,16 +17,16 @@
 		<activity android:name="com.droidmame.prefs.ListKeys" android:theme="@style/Theme.MAME4ALL.TitleBar" android:label="MAME4droid Player Keys"/>
 		<activity android:name="com.droidmame.prefs.KeySelect" android:label="Select Key" android:theme="@android:style/Theme.Dialog"/>
 		
-		<meta-data android:value="50d8844652701521dc0002d7" android:name="UMENG_APPKEY"></meta-data>
+		<meta-data android:value="5152850056240b4c7d000769" android:name="UMENG_APPKEY"></meta-data>
         <meta-data android:value="play-google" android:name="UMENG_CHANNEL"/>
 	</application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
-<uses-permission android:name="android.permission.VIBRATE"/>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
-<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
-<uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
 		
     <uses-sdk android:targetSdkVersion="11" android:minSdkVersion="7"/>
     <supports-screens

@@ -37,7 +37,7 @@ import android.view.MenuItem;
 import com.droidmame.input.InputHandler;
 import com.droidmame.sf2.Emulator;
 import com.droidmame.sf2.StreetFighterA;
-import com.droidmame.sf2pkg2.R;
+import com.dreamgame.dino.R;
 
 public class MenuHelper {
 	

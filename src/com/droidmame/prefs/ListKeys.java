@@ -44,17 +44,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.droidmame.input.InputHandler;
-import com.droidmame.sf2pkg2.R;
+import com.dreamgame.dino.R;
 
 public class ListKeys extends ListActivity {
-		
-	public static final String[] androidKeysLabels = { 
-		/* 0 - 9*/
-		"UNKNOWN", "SOFT_LEFT","SOFT_RIGHT", "HOME", "BACK", "CALL", "ENDCALL", "0", "1", "2",
-        /* 10 - 19*/		
-		"3", "4", "5", "6", "7", "8", "9", "STAR", "POUND", "DPAD_UP",
-		/* 20 - 29*/
-		"DPAD_DOWN", "DPAD_LEFT", "DPAD_RIGHT", "DPAD_CENTER", "VOLUME_UP","VOLUME_DOWN", "POWER", "CAMERA", "CLEAR", "A",
+    public static final String[] androidKeysLabels = { 
+            /* 0 - 9*/
+            "UNKNOWN", "SOFT_LEFT","SOFT_RIGHT", "HOME", "BACK", "CALL", "ENDCALL", "0", "1", "2",
+            /* 10 - 19*/
+            "3", "4", "5", "6", "7", "8", "9", "STAR", "POUND", "DPAD_UP",
+            /* 20 - 29*/
+            "DPAD_DOWN", "DPAD_LEFT", "DPAD_RIGHT", "DPAD_CENTER", "VOLUME_UP","VOLUME_DOWN", "POWER", "CAMERA", "CLEAR", "A",
 		/* 30 - 39*/
 		"B", "C", "D", "E","F", "G", "H", "I", "J", "K",
 		/* 40 - 49*/
