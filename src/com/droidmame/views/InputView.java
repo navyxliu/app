@@ -50,7 +50,7 @@ import com.droidmame.input.InputValue;
 import com.droidmame.input.TiltSensor;
 import com.droidmame.sf2.Emulator;
 import com.droidmame.sf2.StreetFighterA;
-import com.droidmame.sf2pkg2.R;
+import com.dreamgame.sf2ce.R;
 
 public class InputView extends ImageView {
 		

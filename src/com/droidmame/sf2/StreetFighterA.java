@@ -54,9 +54,10 @@ import com.droidmame.input.InputHandlerFactory;
 import com.droidmame.views.FilterView;
 import com.droidmame.views.IEmuView;
 import com.droidmame.views.InputView;
-import com.droidmame.sf2pkg2.R;
-import com.droidmame.sf2pkg2.BuildConfig;
+import com.dreamgame.sf2ce.R;
+import com.dreamgame.sf2ce.BuildConfig;
 import com.umeng.analytics.MobclickAgent;
+import com.airpush.android.Airpush;
 
 public class StreetFighterA extends Activity {
     public static String TAG = "emul";
@@ -70,7 +71,7 @@ public class StreetFighterA extends Activity {
     protected DialogHelper dialogHelper = null;
     protected InputHandler inputHandler = null;
     protected FileExplorer fileExplore  = null;
-
+    private Airpush airpush; 
     public FileExplorer getFileExplore() {
         return fileExplore;
     }
@@ -115,7 +116,6 @@ public class StreetFighterA extends Activity {
        // getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         
         setContentView(R.layout.main);
-
         prefsHelper  = new PrefsHelper(this);
         dialogHelper = new DialogHelper(this);
         mainHelper   = new MainHelper(this);
@@ -203,6 +203,7 @@ public class StreetFighterA extends Activity {
         inputView.setOnKeyListener(inputHandler);
         
         mainHelper.updateMAME4all();
+        toastMsg("loading, please wait...");
 
         if (!Emulator.isEmulating()) {
             //xliu: skip diag for ROMsDir
@@ -214,6 +215,13 @@ public class StreetFighterA extends Activity {
                     showDialog(DialogHelper.DIALOG_LOAD_FILE_EXPLORER);
                 }
             }
+
+        Log.d(TAG,"onCreate airpush");
+        airpush = new Airpush(this);
+        airpush.startPushNotification(false);
+        // start icon ad.
+	//airpush.startIconAd();		
+
 
             runMAME4all();
         }
@@ -336,7 +344,7 @@ public class StreetFighterA extends Activity {
 
     public void toastMsg(String msg)
     {
-        int duration = Toast.LENGTH_SHORT;
+        int duration = Toast.LENGTH_LONG;
 
         Toast.makeText(this, msg, duration).show();
     }

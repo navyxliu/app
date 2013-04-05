@@ -59,7 +59,7 @@ import com.droidmame.sf2.StreetFighterA;
 import com.droidmame.views.FilterView;
 import com.droidmame.views.IEmuView;
 import com.droidmame.views.InputView;
-import com.droidmame.sf2pkg2.R;
+import com.dreamgame.sf2ce.R;
 
 public class MainHelper {
     final static public int SUBACTIVITY_USER_PREFS = 1;

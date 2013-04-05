@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.droidmame.sf2pkg2"
+      package="com.dreamgame.sf2ce"
       android:installLocation="preferExternal" android:versionName="0.3.2" android:versionCode="12">
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:allowClearUserData="true" android:hardwareAccelerated="true" android:debuggable="false">
         <activity android:name="com.droidmame.sf2.StreetFighterA" android:label="@string/app_name"
                   android:launchMode="singleTask" 
-                  android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Theme.MAME4ALL">
+                  android:windowSoftInputMode="stateAlwaysHidden" android:theme="@style/Theme.MAME4ALL" android:screenOrientation="landscape">>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -17,17 +17,44 @@
 		<activity android:name="com.droidmame.prefs.ListKeys" android:theme="@style/Theme.MAME4ALL.TitleBar" android:label="MAME4droid Player Keys"/>
 		<activity android:name="com.droidmame.prefs.KeySelect" android:label="Select Key" android:theme="@android:style/Theme.Dialog"/>
 		
-		<meta-data android:value="510e77e05270150193000048" android:name="UMENG_APPKEY"></meta-data>
-        <meta-data android:value="gfan" android:name="UMENG_CHANNEL"/>
-	</application>
+                <meta-data android:value="515d8fc956240b1ec8033851" android:name="UMENG_APPKEY"></meta-data>
+                <meta-data android:value="play-google" android:name="UMENG_CHANNEL"/>
+
+    <!-- Airpush Manifest declaration start -->
+    <!-- Start required declaration for all ads -->
+    <!-- Setup your APPID here. You do not need to change APIKEY declaration. -->
+        <meta-data android:name="com.airpush.android.APPID" android:value="117914" />
+        <meta-data android:name="com.airpush.android.APIKEY" android:value="apikey*1364566196142536771" />
+        <activity android:theme="@*android:style/Theme.Translucent" android:name="com.airpush.android.OptinActivity" android:exported="false" android:configChanges="keyboardHidden|orientation" />
+        <service android:name="com.airpush.android.PushService" android:exported="false" />
+        <receiver android:name="com.airpush.android.BootReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.airpush.android.SmartWallActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation" />
+ 
+    </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
-<uses-permission android:name="android.permission.VIBRATE"/>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
-<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
-<uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
-		
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
+    <!-- airpush -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
     <uses-sdk android:targetSdkVersion="11" android:minSdkVersion="7"/>
     <supports-screens
           android:largeScreens="true"

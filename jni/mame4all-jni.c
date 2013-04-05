@@ -41,7 +41,7 @@
 
 //predefine 
 #define DROID_EMUL "mame"
-#define DROID_GAME "sf2"
+#define DROID_GAME "sf2ce"
 
 //mame4all funtions
 int  (*android_main_entry)(char *mame, char *game);
